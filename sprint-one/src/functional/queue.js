@@ -18,7 +18,7 @@ var Queue = function() {
     last++;
     storage[last] = value;
     // console.log(storage);
-    console.log('enqueue', storage);
+    // console.log('enqueue', storage);
 
   };
 

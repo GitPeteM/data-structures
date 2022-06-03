@@ -32,7 +32,7 @@ var Stack = function() {
       delete storage[counterVar - 1];
       counterVar--;
 
-      // return lastPropterty
+      // return lastProperty
       return lastProperty;
     }
 
