@@ -5,6 +5,8 @@ var Stack = function() {
   var storage = {};
   var counterVar = 1;
 
+  // last in , first out
+
   // Implement the methods below
   someInstance.push = function(value) {
     // key of 1 : value of a
