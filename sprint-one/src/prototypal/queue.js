@@ -3,6 +3,8 @@ var Queue = function() {
   // but try not not reference your old code in writing the new style.
 
   var someInstance = Object.create(queueMethods);
+  someInstance.addedLast = 0;
+  someInstance.firstValue = 0;
   return someInstance;
 
 };
@@ -10,26 +12,26 @@ var Queue = function() {
 // first in / first out
 
 var queueMethods = {};
-var Addedlast = 0;
-var firstValue = 0;
+// var Addedlast = 0;
+// var firstValue = 0;
 
 queueMethods.enqueue = function(value) {
-  Addedlast++;
-  this[Addedlast] = value;
+  this.addedLast++;
+  this[this.addedLast] = value;
 };
 
 queueMethods.dequeue = function() {
-  if (Addedlast - firstValue > 0) {
-    firstValue++;
-    var firstProp = this[firstValue];
-    delete this[firstValue];
+  if (this.addedLast - this.firstValue > 0) {
+    this.firstValue++;
+    var firstProp = this[this.firstValue];
+    delete this[this.firstValue];
     return firstProp;
   }
 
 };
 
 queueMethods.size = function () {
-  return Addedlast - firstValue;
+  return this.addedLast - this.firstValue;
 
 };
 

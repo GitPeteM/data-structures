@@ -11,11 +11,6 @@ var Queue = function() {
 
 var queueMethods = {};
 
-// Need Addedlast & firstValue to reset
-// I have tried adding the var within the Queue function and queueMethods.
-// var Addedlast = 0;
-// var firstValue = 0;
-
 // first in, first out
 queueMethods.enqueue = function(value) {
   this.Addedlast++;

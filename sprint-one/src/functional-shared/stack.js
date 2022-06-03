@@ -12,9 +12,6 @@ var Stack = function() {
 
 var stackMethods = {};
 
-// NEED counter to reset?
-// var counter = 0;
-
 // first in/ first out
 stackMethods.push = function (value) {
   // increment the current counter
