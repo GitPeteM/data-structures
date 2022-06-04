@@ -18,10 +18,20 @@ setPrototype.add = function(item) {
 
 //Iterate through storage object by key to check for entry
 setPrototype.contains = function(item) {
+  if (this._storage.indexOf(item) === -1) {
+    return false;
+  } 
+  return true;
+  
 };
 
-//Delete storage object by key
+//Delete item 'string' within array storage
 setPrototype.remove = function(item) {
+  // find index of the target item
+  var itemLoc = this._storage.indexOf(item);
+  // remove target item with splice 
+  this._storage.splice(itemLoc, itemLoc + 1);
+
 };
 
 /*

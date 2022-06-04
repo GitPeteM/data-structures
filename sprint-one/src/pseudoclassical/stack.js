@@ -12,7 +12,7 @@ Stack.prototype.push = function (value) {
   this.height++;
   this.ticket++;
   this.serving = this.ticket - 1;
-}
+};
 
 Stack.prototype.pop = function () {
   if (this.height === 0) {
@@ -24,10 +24,9 @@ Stack.prototype.pop = function () {
     this.height--;
     return result;
   }
-}
+};
 
 Stack.prototype.size = function () {
   return this.height;
-}
-
+};
 
