@@ -25,7 +25,7 @@ treeMethods.addChild = function(value) {
 treeMethods.contains = function(target) {
   // check if target exists within family tree and return Boolean value
   // while current child is a node
-  console.log(this.children);
+  //console.log(this.children);
   
   if (target === this.value) {
     return true;

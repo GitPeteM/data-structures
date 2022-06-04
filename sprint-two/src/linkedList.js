@@ -33,7 +33,7 @@ var LinkedList = function() {
     // search list for target value and return Boolean value
     var node = list.head;
     while (node) {
-      console.log('node', node);
+      // console.log('node', node);
       if (target === node.value) {
         return true;
       }
