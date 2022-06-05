@@ -11,10 +11,11 @@ describe('binarySearchTree', function() {
     expect(binarySearchTree.depthFirstLog).to.be.a('function');
   });
 
-  /*it('should return undefined when tree is given duplicate value', function () {
-    expect(binarySearchTree.insert(5).to.equal(undefined));
+  it('should return undefined when tree is given duplicate value', function () {
+    var foo = binarySearchTree.insert(5);
+    expect(foo).to.equal(undefined);
 
-  }); */
+  });
 
   it('should insert values at the correct location in the tree', function() {
     binarySearchTree.insert(2);

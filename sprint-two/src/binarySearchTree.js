@@ -2,7 +2,7 @@ var BinarySearchTree = function(value) {
   this.value = value;
   this.left = null;
   this.right = null;
-    
+
 
 };
 
@@ -20,9 +20,9 @@ BinarySearchTree.prototype.insert = function (val) {
       // set this.left to new instance of BST with val as input
       this.left = new BinarySearchTree(val);
     } else {
-      //otherwise, recursive call insert on the existing left child BST(val) 
+      //otherwise, recursive call insert on the existing left child BST(val)
       this.left.insert(val);
-    } 
+    }
   // Check if input val is greater than BST's value.
   } else if (val > this.value) {
     // if the right child of the BST's tree has not been assigned
@@ -30,15 +30,15 @@ BinarySearchTree.prototype.insert = function (val) {
       // Set the right child as a new instance of BST with val as input
       this.right = new BinarySearchTree(val);
     } else {
-      //otherwise, recursive call insert on the existing right child BST(val) 
+      //otherwise, recursive call insert on the existing right child BST(val)
       this.right.insert(val);
     }
   } else {
-    //If input is neither greater or less than 
-    return; 
+    //If input is neither greater or less than
+    return;
   }
-   
-  
+
+
 };
 
 //Base case check if this.value = input
@@ -48,7 +48,7 @@ BinarySearchTree.prototype.contains = function (val) {
     return true;
   } else if (val < this.value) {
     if (this.left !== null ) {
-      return this.left.contains(val); 
+      return this.left.contains(val);
     }
     return false;
   } else if (val > this.value) {
@@ -66,7 +66,7 @@ BinarySearchTree.prototype.depthFirstLog = function (func) {
   func(this.value);
   if (this.left !== null) {
     this.left.depthFirstLog(func);
-  } 
+  }
 
   if (this.right !== null) {
     this.right.depthFirstLog(func);
