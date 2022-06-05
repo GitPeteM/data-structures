@@ -31,4 +31,4 @@ class Stack {
 
 }
 
-var queueMethods = new Stack();
+// var queueMethods = new Stack();

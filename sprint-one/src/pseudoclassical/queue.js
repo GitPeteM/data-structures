@@ -32,6 +32,6 @@ Queue.prototype.size = function() {
 };
 
 
-var queueMethods = new Queue();
+// var queueMethods = new Queue();
 
 

@@ -28,5 +28,3 @@ Stack.prototype.size = function () {
 
 };
 
-var stackMethods = new Stack ();
-

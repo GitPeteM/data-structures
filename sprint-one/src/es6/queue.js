@@ -34,4 +34,4 @@ class Queue {
 
 }
 
-var queueMethods = new Queue();
+// var queueMethods = new Queue();
