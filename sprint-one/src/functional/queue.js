@@ -3,9 +3,10 @@ var Queue = function() {
 
   // Use an object with numeric keys to store values
   var storage = {};
-  var serving = 0;
-  var ticket = 0;
-  var size = 0;
+  var last = 0;
+  var first = 0;
+
+  // first in , first out
 
   // Implement the methods below
 
@@ -14,9 +15,15 @@ var Queue = function() {
   //Increment Queue Size
   //Increment Storage Key
   someInstance.enqueue = function(value) {
-    storage[ticket] = value;
-    ticket++;
-    size++;
+    // key of 1 : value of a
+    // key of 2 : value of b
+
+    // take property as a counter : value to storage object.
+    last++;
+    storage[last] = value;
+    // console.log(storage);
+    // console.log('enqueue', storage);
+
   };
 
   //Handle empty
@@ -25,24 +32,19 @@ var Queue = function() {
   //Decrement Size
   //Return head
   someInstance.dequeue = function() {
-    if (size === 0) {
-      return size
-    } else {
-      var result = storage[serving];
-      delete storage[serving];
-      serving++;
-      size--;
-
-      return result;
-
+    if (last - first > 0) {
+      first++;
+      var firstProperty = storage[first];
+      delete storage[first];
+      return firstProperty;
     }
-
   };
 
   //return length
   someInstance.size = function() {
-    return size;
-  };
 
+    // return counter subtract 1.
+    return last - first;
+  };
   return someInstance;
 };

@@ -1,32 +1,37 @@
 class Queue {
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
+
   constructor() {
-    this.storage = {};
-    this.ticket = 0;
-    this.serving = 0;
-    this.length = 0;
+
+    this.addedLast = 0;
+    this.firstValue = 0;
   }
 
+  // first in / last out
   enqueue(value) {
-    this.storage[this.ticket] = value;
-    this.ticket++;
-    this.length++;
+    // Add a value to the queue
+    this.addedLast++;
+    this[this.addedLast] = value;
   }
 
   dequeue() {
-    if (this.length === 0) {
-      return this.length;
-    } else {
-      var result = this.storage[this.serving];
-      this.length--;
-      this.serving++;
-      return result;
+    // remove a value from the queue
+    if (this.addedLast - this.firstValue > 0) {
+      this.firstValue++;
+      var firstProp = this[this.firstValue];
+      delete this[this.firstValue];
+      return firstProp;
     }
+
   }
 
   size() {
-    return this.length;
+    return this.addedLast - this.firstValue;
+
   }
 
+
 }
+
+// var queueMethods = new Queue();

@@ -5,28 +5,30 @@ var Stack = function() {
   this.height = 0;
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
-};
 
+  this.counter = 0;
+};
+//last in / First Out
 Stack.prototype.push = function (value) {
-  this.storage[this.ticket] = value;
-  this.height++;
-  this.ticket++;
-  this.serving = this.ticket - 1;
+  this.counter++;
+  this[this.counter] = value;
+
+
 };
 
 Stack.prototype.pop = function () {
-  if (this.height === 0) {
-    return this.height;
-  } else {
-    var result = this.storage[this.serving];
-    delete this.storage[this.serving];
-    this.serving--;
-    this.height--;
-    return result;
+  // check if there is anything in the stack
+  if (this.counter > 0) {
+    var lastProperty = this[this.counter];
+    delete this[this.counter];
+    this.counter--;
+    return lastProperty;
   }
+
 };
 
 Stack.prototype.size = function () {
-  return this.height;
+  return this.counter;
+
 };
 

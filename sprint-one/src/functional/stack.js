@@ -3,33 +3,45 @@ var Stack = function() {
 
   // Use an object with numeric keys to store values
   var storage = {};
-  var serving = 0;
-  var ticket = 0;
-  var size = 0;
+  var counterVar = 1;
 
+  // last in , first out
 
   // Implement the methods below
   someInstance.push = function(value) {
-    storage[ticket] = value;
-    ticket++;
-    size++;
-    serving = ticket - 1;
+    // key of 1 : value of a
+    // incrememnt key by 1 for each value being added.
+
+    // create counterVar at 1 (outside of function)
+    // add prop /counter : value to storage object
+    storage[counterVar] = value;
+    // console.log(storage);
+    //incrememnt counterVar
+    counterVar++;
   };
 
   someInstance.pop = function() {
-    if (size === 0) {
-      return size
-    } else {
-       var result = storage[serving];
-       delete storage[serving];
-       serving--;
-       size--;
-       return result;
+    // first in / last out
+    // return value should be what we just pop'd
+
+    // check for properties
+    if (counterVar > 1) {
+      // create var to hold lastProperty
+      var lastProperty = storage[counterVar - 1];
+      // delete last property in storage
+      delete storage[counterVar - 1];
+      counterVar--;
+
+      // return lastProperty
+      return lastProperty;
     }
+
   };
 
   someInstance.size = function() {
-    return size;
+
+    return counterVar - 1;
+
   };
 
   return someInstance;
