@@ -23,9 +23,9 @@ Queue.prototype.dequeue = function () {
     this.length--;
     return result;
   }
-}
+};
 
 Queue.prototype.size = function () {
   return this.length;
-}
+};
 
